@@ -1,20 +1,22 @@
 <?php
 
-// function query($query)
-// {
-//  $res = false;
-//  if ($con = mysqli_connect('localhost', 'root', '')) {
-//   die("unable to connect");
-//  }
+echo "heere";
 
-//  $result = mysqli_query($con, $query);
+function query($query)
+{
+ $res = false;
+ if ($con = mysqli_connect('localhost', 'root', '', 'customer_list')) {
+  die("unable to connect");
+ }
 
-//  if ($result && mysqli_num_rows($result) > 0) {
-//   while ($row = mysqli_fetch_assoc($result)) {
-//    //
-//    $res[] = $row;
-//   }
-//  }
+ $result = mysqli_query($con, $query);
 
-//  return $res;
-// }
+ if ($result && mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+   //
+   $res[] = $row;
+  }
+ }
+
+ return $res;
+}
